@@ -1,0 +1,6 @@
+# .gitignore
+
+.git/
+
+*.code-project
+*.code-workspace

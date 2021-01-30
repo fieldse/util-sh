@@ -1,5 +1,9 @@
 # Todo
 
+Setup
+
+- [ ] Add install script
+
 Refactoring
 
 - [ ] Make all status functions use last command status by default
@@ -7,6 +11,7 @@ Refactoring
 Documentation
 
 - [ ] Add more examples for function usage
+- [ ] Make sure Git install examples work
 
 Naming
 

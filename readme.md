@@ -50,14 +50,14 @@ fileExists readme.md
 
 ## Documentation
 
-**Function documentation**
+### Function documentation
 
 Functions should be self documenting and have reasonably self-explanatory names.
 If you're unsure what something does, check the function comments in `util.sh`.
 
 If you're still not sure how a function works, the best way to learn is play around in the console.
 
-**Function usage**
+### Function usage
 
 Most functions will take one or two arguments, which should each be surrounded by quotes if they include spaces or special characters.
 
@@ -80,7 +80,7 @@ Most functions will take one or two arguments, which should each be surrounded b
 
 ```
 
-**What does \$? mean?**
+**_What does \$? mean?_**
 
 "\$?" means the exit status of the last command. You'll see it's used heavily in these functions.
 

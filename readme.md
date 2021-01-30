@@ -76,7 +76,7 @@ Most functions will take one or two arguments, which should each be surrounded b
 **Print status of a failed command**
 
 ```sh
-  $ echo "this should fail" && cat noexists.txt
+  $ echo "this should fail" && cat noexists.txt > /dev/null 2&>1
   $ printStatus "$?" "cat noexists.txt"
   [+] cat noexists.txt                                                 [fail]
 
@@ -85,6 +85,14 @@ Most functions will take one or two arguments, which should each be surrounded b
 **What does \$? mean?**
 
 "\$?" means the exit status of the last command. You'll see it's used heavily in these functions.
+
+You can also store the state of the last command:
+
+```sh
+  $ echo "this should succeed" ; state=$?
+  $ echo "do some other things..."
+  $ printStatus "${state}" "test echo works" # Note that "$?" refers to exit status of last command
+```
 
 ## Repository
 
@@ -102,6 +110,5 @@ https://choosealicense.com/licenses/gpl-3.0/
 
 Contact me at Github: https://github.com/fieldse
 
-Or:
-
-Leave an issue at the project repository -> https://github.com/fieldse/util-sh/issues
+Or: leave a comment in a new issue at the project repository:
+https://github.com/fieldse/util-sh/issues

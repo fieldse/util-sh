@@ -1,6 +1,4 @@
-# Utils.sh
-
-## Summary
+# Util.sh
 
 A small library of bash utilities for improving system configuration and management scripts.
 

@@ -4,6 +4,15 @@ A small library of bash utilities for improving system configuration and managem
 
 ## Installation
 
+**Installation with Curl**
+
+````sh
+# Install locally to your current project, or move wherever you like
+mkdir ./lib && cd lib
+curl -O https://raw.githubusercontent.com/fieldse/util-sh/master/util.sh
+```
+
+
 **Install via Git in local project directory**
 
 ```sh
@@ -32,7 +41,7 @@ git clone git@github.com:fieldse/util-sh.git utilsh
 # Source from its install location:
 . /usr/local/lib/utilsh/util.sh
 
-```
+````
 
 ## Usage
 

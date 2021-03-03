@@ -24,11 +24,11 @@ mkdir lib && cd lib
 git clone git@github.com:fieldse/util-sh.git .
 
 # or clone via HTTPS:
-# git clone https://github.com/fieldse/util-sh.git .
+git clone https://github.com/fieldse/util-sh.git .
 
 ```
 
-**_Better: Install to /usr/local/lib_**
+**Best: Install to /usr/local/lib**
 
 ```sh
 # Create a directory in your /usr/local/[lib|bin|src] system dir and clone to there

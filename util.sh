@@ -1,15 +1,51 @@
 #!/bin/bash
 # util.sh
+# Utility functions and tests for installation and system configuration
+# These are intended for use on Debian-based systems, will not work
+# on RPM-based distros, etc. (yet)
 
-# ==================================================== #
-#     Utility functions and tests for installation     #
-# ==================================================== #
+# author: Matt Fields
+# github: fieldse
+
+# --------------------------------- #
+#           General                 #
+# --------------------------------- #
+
+# Confirm a user input
+function confirm() {
+  echo '' && read -n1 -p "${1} (Y/n)?" SELECTION
+  [[ ${SELECTION,,} == 'y' ]]
+  return "$?"
+}
+
+# Print formatted failure message and exit
+function fail() {
+  printf "\nerror: %s -- exiting\n" "${1}"
+  exit 1
+}
+
+# Confirm a user input or fail
+function confirmOrFail() {
+  confirm "$1" || fail "$2"
+}
+
 
 # --------------------------------- #
 #        Formatted printing         #
 # --------------------------------- #
 
-# Formatted print of test status
+# Print a padded message
+function printPadded() {
+  printf "[+] %-64s \n" "${1}"
+}
+
+# --------------------------------- #
+#           State checks            #
+# --------------------------------- #
+# These check the exit status of a command and print a formatted
+# message of the result
+
+# Print output status, don't exit on fail
 #   params    state (bool), msg (string)
 function printStatus() {
   [[ $1 == 0 ]] && status='OK' || status='fail'
@@ -30,11 +66,6 @@ function checkOrFail() {
   printStatus "${state}" "${msg}" || fail "${errMsg}"
 }
 
-# Fail and exit
-function fail() {
-  printf "\nerror: %s -- exiting\n" "${1}"
-  exit 1
-}
 
 # --------------------------------- #
 #        File/directory tests       #
@@ -85,22 +116,6 @@ function existsOrCreateDir() {
     mkdir -p ${dir} && chmod ${permissions} ${dir}
     printStatus "$?" "creating directory:   ${dir}"
   fi
-}
-
-# --------------------------------- #
-#           General                 #
-# --------------------------------- #
-
-# Confirm a user input
-function confirm() {
-  echo '' && read -n1 -p "${1} (Y/n)?" SELECTION
-  [[ ${SELECTION,,} == 'y' ]]
-  return "$?"
-}
-
-# Confirm a user input or fail
-function confirmOrFail() {
-  confirm "$1" || fail "$2"
 }
 
 

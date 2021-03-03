@@ -21,3 +21,4 @@ Utils
 
 - [ ] System: check OS version
 - [ ] System: check package manager
+- [ ] Package management: Add system-agnostic package manager

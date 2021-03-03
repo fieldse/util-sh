@@ -6,12 +6,12 @@ A small library of bash utilities for improving system configuration and managem
 
 **Installation with Curl**
 
-````sh
+```sh
 # Install locally to your current project, or move wherever you like
 mkdir ./lib && cd lib
 curl -O https://raw.githubusercontent.com/fieldse/util-sh/master/util.sh
-```
 
+```
 
 **Install via Git in local project directory**
 
@@ -41,7 +41,7 @@ git clone git@github.com:fieldse/util-sh.git utilsh
 # Source from its install location:
 . /usr/local/lib/utilsh/util.sh
 
-````
+```
 
 ## Usage
 
@@ -98,7 +98,7 @@ You can also store the state of the last command:
 ```sh
   $ echo "this should succeed" ; state=$?
   $ echo "do some other things..."
-  $ printStatus "${state}" "test echo works" # Note that "$?" refers to exit status of last command
+  $ printStatus "${state}" "test echo works"
 ```
 
 ## Repository

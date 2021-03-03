@@ -128,6 +128,14 @@ function restartOS() {
   confirm "System restart required to continue. Restart now?" && sudo restart now || (echo "canceled" && return 1 )
 }
 
+# --------------------------------- #
+#           Environment             #
+# --------------------------------- #
+
+# Source an env file, export all vars to current shell
+function sourceEnvFile() {
+  export $(egrep -v '^#' $1 | xargs -d "\n")
+}
 
 # --------------------------------- #
 #           Package management      #

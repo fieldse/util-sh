@@ -132,6 +132,15 @@ function restartOS() {
 #           Environment             #
 # --------------------------------- #
 
+# Source all the .env files in the passed directory
+function sourceAllEnvs() {
+  dirExistsOrFail "${1}"
+  echo -e "\nsource all env files in directory ${1}"
+  for f in "${1}/*.env" ; do
+    sourceEnvFile ${f}
+  done
+}
+
 # Source an env file, export all vars to current shell
 function sourceEnvFile() {
   export $(egrep -v '^#' $1 | xargs -d "\n")

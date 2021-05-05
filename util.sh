@@ -135,8 +135,8 @@ function restartOS() {
 # Source all the .env files in the passed directory
 function sourceAllEnvs() {
   dirExistsOrFail "${1}"
-  echo -e "\nsource all env files in directory ${1}"
-  for f in "${1}/*.env" ; do
+  echo -e "\nsourcing env files in ${1}:"
+  for f in ${1}/*.env ; do
     sourceEnvFile ${f}
   done
 }
